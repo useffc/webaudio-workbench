@@ -12,6 +12,17 @@ class Oscillator extends React.Component {
         }
     }
     render() {
+        let gainNode = this.props.audio.createGain()
+        gainNode.gain.value = this.state.volume
+
+        let osc = this.props.audio.createOscillator()
+        osc.type = "square"
+        osc.connect(this.props.audio.destination)
+        osc.frequency.value = this.state.frequency
+
+        let volumeSliderHandler = this.modifyVolume.bind(this)
+        let frequencySliderHandler = this.modifyFrequency.bind(this)
+        //osc.start()
         return (
             <div>
                 <MuiThemeProvider>
