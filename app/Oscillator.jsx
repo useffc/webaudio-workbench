@@ -13,9 +13,14 @@ class Oscillator extends React.Component {
     }
     render() {
         return (
-            <MuiThemeProvider>
-                <Slider />
-            </MuiThemeProvider>
+            <div>
+                <MuiThemeProvider>
+                    <Slider axis="y" style={{height: "200px"}} onChange={volumeSliderHandler} value={this.state.volume} />
+                </MuiThemeProvider>
+                <MuiThemeProvider>
+                    <Slider axis="y" style={{height: "200px"}} onChange={frequencySliderHandler} min={0} max={22050} value={this.state.frequency} />
+                </MuiThemeProvider>
+            </div>
         )
     }
 }
