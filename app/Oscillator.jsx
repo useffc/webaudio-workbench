@@ -12,9 +12,12 @@ class Oscillator extends React.Component {
         }
     }
 
+    componentDidUpdate() {
+        console.log(this)
+    }
+
     modifyVolume(event, volume) {
         this.setState({volume: volume})
-        console.log(this)
     }
 
     modifyFrequency(event, frequency) {
@@ -32,7 +35,7 @@ class Oscillator extends React.Component {
 
         let volumeSliderHandler = this.modifyVolume.bind(this)
         let frequencySliderHandler = this.modifyFrequency.bind(this)
-        osc.start()
+        //osc.start()
         return (
             <div>
                 volume
