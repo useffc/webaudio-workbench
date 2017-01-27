@@ -32,12 +32,14 @@ class Oscillator extends React.Component {
 
         let volumeSliderHandler = this.modifyVolume.bind(this)
         let frequencySliderHandler = this.modifyFrequency.bind(this)
-        //osc.start()
+        osc.start()
         return (
             <div>
+                volume
                 <MuiThemeProvider>
                     <Slider axis="y" style={{height: "200px"}} onChange={volumeSliderHandler} value={this.state.volume} />
                 </MuiThemeProvider>
+                freq
                 <MuiThemeProvider>
                     <Slider axis="y" style={{height: "200px"}} onChange={frequencySliderHandler} min={0} max={22050} value={this.state.frequency} />
                 </MuiThemeProvider>
