@@ -11,6 +11,16 @@ class Oscillator extends React.Component {
             frequency: 440.01
         }
     }
+
+    modifyVolume(event, volume) {
+        this.setState({volume: volume})
+        console.log(this)
+    }
+
+    modifyFrequency(event, frequency) {
+        this.setState({frequency: frequency})
+    }
+
     render() {
         let gainNode = this.props.audio.createGain()
         gainNode.gain.value = this.state.volume
