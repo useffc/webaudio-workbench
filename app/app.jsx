@@ -6,9 +6,11 @@ class App extends React.Component {
     constructor(props) {
         super(props)
     }
+
     render() {
+        let audio = new AudioContext
         return (
-            <Oscillator />
+            <Oscillator audio={audio} />
         )
     }
 }
